@@ -1,5 +1,5 @@
 from binance.client import Client
-from config import *
+import config_BIN
 import pandas as pd
 import time
 
@@ -7,7 +7,9 @@ import time
 # asset1 = input('What Asset To Check? ')
 # asset1 = (asset1+'USDT').upper()
 
-binance_client = Client(key, secret)
+key = config_BIN.api_key
+sec = config_BIN.api_secret
+binance_client = Client(key, sec)
 
 def get_psar_htf(barsdata, iaf=iaf, maxaf=maxaf):
     length = len(barsdata)

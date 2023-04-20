@@ -11,6 +11,14 @@ key = config_BIN.api_key
 sec = config_BIN.api_secret
 binance_client = Client(key, sec)
 
+# PSAR settings
+iaf = 0.02
+maxaf = 0.2
+
+q1 = 15
+q2 = 15
+
+
 def get_psar_htf(barsdata, iaf=iaf, maxaf=maxaf):
     length = len(barsdata)
     high = list(barsdata['High'])
@@ -106,7 +114,7 @@ def psar_binance_htf(asset1,htf,limit):
     print(asset1,'   Previous PSAR', htf, psar_prev)
 
     return psar_current
-    
+
 # psar_binance_htf()
 
 # EXAMPLE
